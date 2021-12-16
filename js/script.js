@@ -14,9 +14,15 @@ const app = new Vue (
         methods : {
             next: function() {
                 this.count += 1;
+                if (this.count > this.images.length - 1) {
+                    this.count = 0;
+                }
             },
             prev: function() {
                 this.count += -1;
+                if (this.count < 0) {
+                    this.count = this.images.length - 1;
+                }
             }
         }
     }
